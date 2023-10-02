@@ -1,0 +1,231 @@
+#nav1{
+    position: fixed;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background-color: #edf1f4cc ;
+    transition: .3s;
+    /* background-image: linear-gradient(147deg, #edf1f4 0%, #dee4ea 74%); */
+}
+.navContent{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.gauche{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.gauche h2{
+    font-weight: 300;
+    font-size: 18px;
+}
+.droite{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.droite .navLink{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+}
+.droite .navLink ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.droite .navLink ul li{
+    list-style: none;
+}
+.droite .navLink ul li a{
+    text-decoration: none;
+}
+.droite .navLink ul li a button{
+    background: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.droite .navLink ul li a button:hover{
+    color: var(--colorTheme) ;
+    transition: .2s;
+}
+.droite .navLink ul li a button:focus{
+    color: var(--colorThemeDur) ;
+    transition: .2s;
+}
+
+.droite .navBtn{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   
+}
+.droite .navBtn button.contact-us{
+    position: relative;
+    padding: 8px 18px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 0;
+    overflow: hidden;
+    box-shadow:   0 2px 15px #1e99feab;
+    /* background: linear-gradient(180deg, #60dfcd 0%, #1e9afe 74%); */
+}
+/* background */
+.droite .navBtn button .bgBtnNav{
+    position: absolute;
+    width: 180px ;
+    margin-left: -50px;
+    margin-top: -25px;
+    height: 160px;
+    z-index: 1;
+    transition: .8s;
+    background: linear-gradient(180deg, #60dfcd 0%, #1e9afe 44%);
+}
+.droite .navBtn button .soratraNavBtn{
+    position: relative;
+    z-index: 2;
+}
+.droite .navBtn button:hover .bgBtnNav{
+    margin-top: -25px;
+    transform: rotate(325deg);
+    transition: .8s;
+    /* background: linear-gradient(315deg, #60dfcd 0%, #1e9afe 74%) .3s; */
+}
+
+.btnBurger{
+    display: none;
+}
+.navBtn button.btnBurger .close{
+    display: none;
+}
+/* responsivity */
+
+@media screen and (max-width: 1023px) {
+    body{
+        background: rgb(100, 71, 71);
+    }
+    .navContent{
+        width: 95%;
+    }
+    .droite{
+        justify-content: end;
+    }
+    /* togglevana */
+    .droite .navLink{
+        display: none;
+    }
+    .droite .navBtn a{
+        display: none;
+    }
+
+    .droite .navBtn .btnBurger{
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .droite .navBtn .btnBurger svg{
+        width: 30px;
+        height: 30px;
+    }
+
+    .activeToggle #nav1{
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 90px;
+        height: 360px;
+        transition: .6s;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+    .activeToggle .navContent{
+        flex-direction: column;
+    }
+    .activeToggle .gauche{
+        width: 100%;
+        height: 48px;
+    }
+    .activeToggle .droite{
+        width: 100%;
+        justify-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .activeToggle .droite .navLink{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 150px;
+    }
+    .activeToggle .navLink ul{
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+    }
+    .activeToggle .navLink ul li{
+        width: 100%;
+        margin-left: -30px ;
+    }
+    .activeToggle .navLink ul li button{
+        margin: 8px auto;
+        width: 100%;
+    }
+    .activeToggle .navBtn{
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .activeToggle .navBtn button.btnBurger{
+        margin-top: 30px;
+    }
+    .activeToggle .navBtn button.btnBurger .open{
+        display: none;
+        transition: .3s;
+    }
+    .navBtn button.btnBurger .open{
+        display: block;
+        transition: .3s;
+    }
+    .navBtn button.btnBurger .close{
+        display: none;
+        transition: .3s;
+    }
+    .activeToggle .navBtn button.btnBurger .close{
+        display: block;
+        transition: .3s;
+    }
+
+    .activeToggle .droite .navBtn a{
+        display: block;
+        transition: .3s;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .activeToggle #nav1{
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+        height: 360px;
+    }
+}
